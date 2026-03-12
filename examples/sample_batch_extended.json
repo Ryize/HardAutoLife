@@ -1,0 +1,119 @@
+{
+  "batch_id": "batch_002",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "tracks": [
+    {
+      "track_id": "track_001",
+      "source_id": "camera_01",
+      "start_ts": "2024-01-15T10:30:00Z",
+      "end_ts": "2024-01-15T10:30:10Z",
+      "plate_text": "A123BC777",
+      "plate_confidence": 0.95,
+      "color": "red",
+      "make": "Toyota",
+      "model": "Camry",
+      "vehicle_type": "car",
+      "body_type": "sedan",
+      "size_class": "medium",
+      "lane_id": "1",
+      "relative_position": 0.3,
+      "points": [
+        {
+          "ts": "2024-01-15T10:30:00Z",
+          "lat": 55.7558,
+          "lon": 37.6173,
+          "speed_mps": 12.5,
+          "heading_deg": 45.0
+        },
+        {
+          "ts": "2024-01-15T10:30:05Z",
+          "lat": 55.7560,
+          "lon": 37.6175,
+          "speed_mps": 13.2,
+          "heading_deg": 46.0
+        },
+        {
+          "ts": "2024-01-15T10:30:10Z",
+          "lat": 55.7562,
+          "lon": 37.6177,
+          "speed_mps": 14.0,
+          "heading_deg": 47.0
+        }
+      ]
+    },
+    {
+      "track_id": "track_002",
+      "source_id": "camera_02",
+      "start_ts": "2024-01-15T10:30:15Z",
+      "end_ts": "2024-01-15T10:30:25Z",
+      "plate_text": "-",
+      "plate_confidence": 0.2,
+      "color": "red",
+      "make": "Toyota",
+      "vehicle_type": "car",
+      "body_type": "sedan",
+      "size_class": "medium",
+      "lane_id": "2",
+      "relative_position": 0.4,
+      "points": [
+        {
+          "ts": "2024-01-15T10:30:15Z",
+          "lat": 55.7565,
+          "lon": 37.6180,
+          "speed_mps": 13.8,
+          "heading_deg": 48.0
+        },
+        {
+          "ts": "2024-01-15T10:30:20Z",
+          "lat": 55.7567,
+          "lon": 37.6182,
+          "speed_mps": 14.1,
+          "heading_deg": 49.0
+        },
+        {
+          "ts": "2024-01-15T10:30:25Z",
+          "lat": 55.7569,
+          "lon": 37.6184,
+          "speed_mps": 14.5,
+          "heading_deg": 50.0
+        }
+      ]
+    },
+    {
+      "track_id": "track_003",
+      "source_id": "camera_01",
+      "start_ts": "2024-01-15T10:30:30Z",
+      "end_ts": "2024-01-15T10:30:40Z",
+      "plate_text": "-",
+      "plate_confidence": 0.1,
+      "color": "blue",
+      "vehicle_type": "car",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "lane_id": "1",
+      "relative_position": 0.8,
+      "points": [
+        {
+          "ts": "2024-01-15T10:30:30Z",
+          "lat": 55.7570,
+          "lon": 37.6185,
+          "speed_mps": 10.0,
+          "heading_deg": 90.0
+        },
+        {
+          "ts": "2024-01-15T10:30:35Z",
+          "lat": 55.7570,
+          "lon": 37.6190,
+          "speed_mps": 10.5
+        },
+        {
+          "ts": "2024-01-15T10:30:40Z",
+          "lat": 55.7570,
+          "lon": 37.6195,
+          "speed_mps": 11.0,
+          "heading_deg": 90.0
+        }
+      ]
+    }
+  ]
+}
