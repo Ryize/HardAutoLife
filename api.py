@@ -2,6 +2,7 @@ from typing import Any, Dict
 
 from fastapi import FastAPI, HTTPException
 
+from blockchain import LocalBlockchain
 from config import ReIDConfig
 from reid import reidentify
 from schema import load_batch
@@ -73,11 +74,35 @@ async def reid_endpoint(batch: Dict[str, Any]) -> Dict[str, Any]:
         for l in links
     ]
 
+    blockchain = LocalBlockchain()
+    block = blockchain.add_audit_record(
+        input_payload=batch,
+        track_features=features,
+        reid_result={
+            "entities": entities_out,
+            "links": links_out,
+        },
+        metadata={
+            "batch_id": batch_obj.batch_id,
+            "num_tracks": len(batch_obj.tracks),
+            "source": "api:/reid",
+        },
+    )
+    chain_valid, chain_message = blockchain.verify_chain()
+
     return {
         "batch_id": batch_obj.batch_id,
         "num_tracks": len(batch_obj.tracks),
         "entities": entities_out,
         "links": links_out,
         "track_features": features,
+        "blockchain": {
+            "block_index": block.index,
+            "block_hash": block.block_hash,
+            "previous_hash": block.previous_hash,
+            "merkle_root": block.merkle_root,
+            "difficulty": block.difficulty,
+            "chain_valid": chain_valid,
+            "validation_message": chain_message,
+        },
     }
-

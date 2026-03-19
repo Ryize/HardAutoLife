@@ -7,6 +7,7 @@
 import json
 import sys
 from pathlib import Path
+from blockchain import LocalBlockchain
 from schema import load_batch
 from utils import compute_track_features
 from reid import reidentify
@@ -15,6 +16,7 @@ from config import ReIDConfig
 
 def print_batch_info(batch):
     """Вывод информации о загруженном пакете."""
+
     print("=" * 80)
     print("ИНФОРМАЦИЯ О ПАКЕТЕ")
     print("=" * 80)
@@ -22,7 +24,7 @@ def print_batch_info(batch):
     print(f"Timestamp: {batch.timestamp or 'не указан'}")
     print(f"Количество треков: {len(batch.tracks)}")
     print()
-    
+
     for i, track in enumerate(batch.tracks, 1):
         print(f"Трек #{i}: {track.track_id}")
         print(f"  Источник: {track.source_id}")
@@ -35,24 +37,36 @@ def print_batch_info(batch):
         print()
 
 
-def print_features(batch):
+def print_features(batch, track_features):
     """Вывод вычисленных признаков для всех треков."""
     print("=" * 80)
     print("ВЫЧИСЛЕННЫЕ ПРИЗНАКИ")
     print("=" * 80)
-    
+
     for track in batch.tracks:
-        features = compute_track_features(track)
+        features = track_features[track.track_id]
         print(f"Трек: {track.track_id}")
-        print(f"  Средняя скорость: {features['avg_speed']:.2f} м/с" if features['avg_speed'] else "  Средняя скорость: не указана")
-        print(f"  Медианная скорость: {features['median_speed']:.2f} м/с" if features['median_speed'] else "  Медианная скорость: не указана")
-        print(f"  Доминирующее направление: {features['dominant_heading']:.1f}°" if features['dominant_heading'] else "  Доминирующее направление: не указано")
+        print(
+            f"  Средняя скорость: {features['avg_speed']:.2f} м/с" if features[
+                'avg_speed'] else "  Средняя скорость: не указана")
+        print(f"  Медианная скорость: {features['median_speed']:.2f} м/с" if
+              features['median_speed'] else "  Медианная скорость: не указана")
+        print(
+            f"  Доминирующее направление: {features['dominant_heading']:.1f}°" if
+            features[
+                'dominant_heading'] else "  Доминирующее направление: не указано")
         print(f"  Длина пути: {features['path_length']:.1f} м")
         print(f"  Длительность: {features['duration_seconds']:.1f} с")
-        print(f"  Перемещение: {features['displacement']['distance_m']:.1f} м" if features['displacement']['distance_m'] else "  Перемещение: 0 м")
-        print(f"  Направление перемещения: {features['displacement']['heading_deg']:.1f}°" if features['displacement']['heading_deg'] else "  Направление перемещения: не указано")
+        print(
+            f"  Перемещение: {features['displacement']['distance_m']:.1f} м" if
+            features['displacement']['distance_m'] else "  Перемещение: 0 м")
+        print(
+            f"  Направление перемещения: {features['displacement']['heading_deg']:.1f}°" if
+            features['displacement'][
+                'heading_deg'] else "  Направление перемещения: не указано")
         bbox = features['bbox']
-        print(f"  Bounding box: ({bbox['min_lat']:.6f}, {bbox['min_lon']:.6f}) - ({bbox['max_lat']:.6f}, {bbox['max_lon']:.6f})")
+        print(
+            f"  Bounding box: ({bbox['min_lat']:.6f}, {bbox['min_lon']:.6f}) - ({bbox['max_lat']:.6f}, {bbox['max_lon']:.6f})")
         print()
 
 
@@ -61,33 +75,36 @@ def print_reid_results(entities, links):
     print("=" * 80)
     print("РЕЗУЛЬТАТЫ RE-IDENTIFICATION")
     print("=" * 80)
-    
+
     print(f"Найдено сущностей: {len(entities)}")
     print()
-    
+
     # Группировка связей по сущностям
     entity_links = {}
     for link in links:
         if link.entity_id not in entity_links:
             entity_links[link.entity_id] = []
         entity_links[link.entity_id].append(link)
-    
+
     # Вывод информации о каждой сущности
     for entity in sorted(entities, key=lambda e: e.entity_id):
         print(f"Сущность: {entity.entity_id}")
         print(f"  Треки: {', '.join(sorted(entity.track_ids))}")
-        
+
         # Вывод связей с объяснениями
         if entity.entity_id in entity_links:
             print("  Связи:")
-            for link in sorted(entity_links[entity.entity_id], key=lambda l: l.confidence, reverse=True):
-                print(f"    Трек {link.track_id}: confidence={link.confidence:.3f}")
+            for link in sorted(entity_links[entity.entity_id],
+                               key=lambda l: l.confidence, reverse=True):
+                print(
+                    f"    Трек {link.track_id}: confidence={link.confidence:.3f}")
                 if link.reasons:
                     print(f"      Причины:")
-                    for reason in link.reasons[:5]:  # Показываем первые 5 причин
+                    for reason in link.reasons[
+                        :5]:  # Показываем первые 5 причин
                         print(f"        - {reason}")
         print()
-    
+
     # Статистика
     print("Статистика:")
     print(f"  Всего треков: {len(set(link.track_id for link in links))}")
@@ -97,48 +114,108 @@ def print_reid_results(entities, links):
     print()
 
 
+def build_track_features(batch):
+    """Вычисление признаков по всем трекам пакета."""
+    return {
+        track.track_id: compute_track_features(track)
+        for track in batch.tracks
+    }
+
+
+def serialize_entities(entities):
+    """Сериализация сущностей в детерминированный JSON-совместимый вид."""
+    return [
+        {
+            "entity_id": entity.entity_id,
+            "track_ids": sorted(entity.track_ids),
+        }
+        for entity in sorted(entities, key=lambda item: item.entity_id)
+    ]
+
+
+def serialize_links(links):
+    """Сериализация связей в детерминированный JSON-совместимый вид."""
+    return [
+        {
+            "entity_id": link.entity_id,
+            "track_id": link.track_id,
+            "confidence": float(link.confidence),
+            "reasons": list(link.reasons),
+        }
+        for link in sorted(
+            links,
+            key=lambda item: (item.entity_id, item.track_id, -item.confidence),
+        )
+    ]
+
+
 def main():
     """Основная функция."""
     if len(sys.argv) < 2:
         print("Использование: python main.py <путь_к_json_файлу>")
         print("Пример: python main.py examples/sample_batch_extended.json")
         sys.exit(1)
-    
+
     json_path = Path(sys.argv[1])
-    
+
     if not json_path.exists():
         print(f"Ошибка: файл {json_path} не найден")
         sys.exit(1)
-    
+
     try:
         # Загрузка JSON
         print(f"Загрузка данных из {json_path}...")
         with open(json_path, 'r', encoding='utf-8') as f:
             json_data = json.load(f)
-        
+
         # Валидация и загрузка пакета
         print("Валидация данных...")
         batch = load_batch(json_data)
         print(" Данные успешно загружены и валидированы")
         print()
-        
+
         # Вывод информации о пакете
         print_batch_info(batch)
-        
+
         # Вычисление признаков
         print("Вычисление признаков...")
-        print_features(batch)
-        
+        track_features = build_track_features(batch)
+        print_features(batch, track_features)
+
         # ReID
         print("Выполнение Re-identification...")
         config = ReIDConfig()
         entities, links = reidentify(batch, config)
         print(" ReID завершён")
         print()
-        
+
         # Вывод результатов
         print_reid_results(entities, links)
-        
+
+        # Блокчейн-аудит
+        print("Запись в локальный blockchain-журнал...")
+        blockchain = LocalBlockchain()
+        entities_out = serialize_entities(entities)
+        links_out = serialize_links(links)
+        block = blockchain.add_audit_record(
+            input_payload=json_data,
+            track_features=track_features,
+            reid_result={
+                "entities": entities_out,
+                "links": links_out,
+            },
+            metadata={
+                "batch_id": batch.batch_id,
+                "num_tracks": len(batch.tracks),
+                "source_file": str(json_path),
+            },
+        )
+        is_valid, validation_message = blockchain.verify_chain()
+        print(f" Blockchain-блок сохранён: index={block.index}, hash={block.block_hash}")
+        print(f" Проверка цепочки: {validation_message}")
+        if not is_valid:
+            raise RuntimeError("После записи цепочка блоков не прошла проверку")
+
     except Exception as e:
         print(f"Ошибка: {e}")
         import traceback
@@ -148,4 +225,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
