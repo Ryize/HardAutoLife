@@ -6,12 +6,15 @@
 
 import json
 import sys
+import time
 from pathlib import Path
 from blockchain import LocalBlockchain
 from schema import load_batch
 from utils import compute_track_features
 from reid import reidentify
 from config import ReIDConfig
+from metrics import evaluate_entities, extract_reference_groups, update_statistics_file
+from utils import normalize_time
 
 
 def print_batch_info(batch):
@@ -151,6 +154,8 @@ def serialize_links(links):
 
 def main():
     """Основная функция."""
+    request_started_at = time.perf_counter()
+
     if len(sys.argv) < 2:
         print("Использование: python main.py <путь_к_json_файлу>")
         print("Пример: python main.py examples/sample_batch_extended.json")
@@ -192,10 +197,43 @@ def main():
         # Вывод результатов
         print_reid_results(entities, links)
 
+        entities_out = serialize_entities(entities)
+        track_time_lookup = {
+            track.track_id: {
+                "start": normalize_time(track.start_ts),
+                "end": normalize_time(track.end_ts),
+            }
+            for track in batch.tracks
+        }
+
+        # Тихое обновление статистики качества по эталону, если он доступен
+        reference_path = Path("result/result.json")
+        if reference_path.exists():
+            with open(reference_path, "r", encoding="utf-8") as f:
+                reference_payload = json.load(f)
+            evaluation = evaluate_entities(
+                predicted_entities=entities_out,
+                reference_entities=extract_reference_groups(reference_payload),
+                track_time_lookup=track_time_lookup,
+            )
+            request_processing_seconds = time.perf_counter() - request_started_at
+            evaluation["request_processing_time_seconds"] = round(
+                request_processing_seconds, 6
+            )
+            evaluation["request_processing_time_ms"] = round(
+                request_processing_seconds * 1000.0, 3
+            )
+            update_statistics_file(
+                stats_path=Path("result/statistics.json"),
+                input_path=json_path,
+                reference_path=reference_path,
+                batch_id=batch.batch_id,
+                metrics=evaluation,
+            )
+
         # Блокчейн-аудит
         print("Запись в локальный blockchain-журнал...")
         blockchain = LocalBlockchain()
-        entities_out = serialize_entities(entities)
         links_out = serialize_links(links)
         block = blockchain.add_audit_record(
             input_payload=json_data,

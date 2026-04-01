@@ -15,32 +15,32 @@ class ReIDConfig:
     # Если различие превышает порог, треки не могут быть объединены
     
     # Цвет: если цвета заданы и различаются, штраф
-    color_mismatch_penalty: float = 0.5  # Штраф за несовпадение цвета (0..1)
+    color_mismatch_penalty: float = 0.292  # Штраф за несовпадение цвета (0..1)
     color_match_boost: float = 0.1  # Бонус за совпадение цвета
     
     # Марка: если марки заданы и различаются, штраф
-    make_mismatch_penalty: float = 0.7  # Штраф за несовпадение марки
+    make_mismatch_penalty: float = 0.636  # Штраф за несовпадение марки
     make_match_boost: float = 0.15  # Бонус за совпадение марки
 
     # Тип ТС
-    vehicle_type_mismatch_penalty: float = 0.5  # Штраф за несовпадение типа ТС
+    vehicle_type_mismatch_penalty: float = 0.252  # Штраф за несовпадение типа ТС
     vehicle_type_match_boost: float = 0.1  # Бонус за совпадение типа ТС
 
     # Тип кузова
-    body_type_mismatch_penalty: float = 0.2  # Штраф за несовпадение типа кузова
+    body_type_mismatch_penalty: float = 0.07  # Штраф за несовпадение типа кузова
     body_type_match_boost: float = 0.05  # Бонус за совпадение типа кузова
 
     # Класс размера
-    size_class_mismatch_penalty: float = 0.2  # Штраф за несовпадение класса размера
+    size_class_mismatch_penalty: float = 0.189  # Штраф за несовпадение класса размера
     size_class_match_boost: float = 0.05  # Бонус за совпадение класса размера
 
     # Номерной знак: очень сильный признак
-    plate_full_match_boost: float = 0.7   # Большой бонус за полный матч номера
-    plate_mismatch_penalty: float = 0.9   # Сильный штраф за явное несовпадение
+    plate_full_match_boost: float = 0.895   # Большой бонус за полный матч номера
+    plate_mismatch_penalty: float = 0.325   # Сильный штраф за явное несовпадение
     plate_partial_match_boost: float = 0.3  # Бонус за частичное совпадение (например, по шаблону)
     
     # Источник: если источники одинаковые, небольшой бонус (одна камера)
-    same_source_boost: float = 0.05  # Бонус за один источник
+    same_source_boost: float = 0.091  # Бонус за один источник
     
     # Веса для признаков траектории (сумма должна быть ~1.0)
     weight_avg_speed: float = 0.15  # Вес средней скорости
@@ -60,7 +60,7 @@ class ReIDConfig:
     max_geographic_distance_m: float = 200.0  # Максимальное расстояние для близости
     
     # Порог confidence для объединения треков в одну сущность
-    confidence_threshold: float = 0.75  # Минимальный confidence для объединения
+    confidence_threshold: float = 0.792  # Минимальный confidence для объединения
     
     # Порог для географической близости (расстояние между конечной точкой одного
     # трека и начальной точкой другого)
@@ -101,4 +101,3 @@ class ReIDConfig:
         if diff > 180:
             diff = 360 - diff
         return diff / 180.0  # Нормализация к [0, 1]
-

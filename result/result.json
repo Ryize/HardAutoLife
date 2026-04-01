@@ -1,0 +1,1704 @@
+{
+  "vehicles": [
+    {
+      "vehicle_id": "veh_0001",
+      "true_plate": "B905ET134",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "red",
+      "vehicle_type": "bus",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000001",
+        "trk_000002",
+        "trk_000003",
+        "trk_000004",
+        "trk_000005"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0002",
+      "true_plate": "P785OM34",
+      "make": "Kia",
+      "model": "Sportage",
+      "color": "silver",
+      "vehicle_type": "car",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000006",
+        "trk_000007",
+        "trk_000008",
+        "trk_000009",
+        "trk_000010"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0003",
+      "true_plate": "O728XA34",
+      "make": "Volkswagen",
+      "model": "Tiguan",
+      "color": "black",
+      "vehicle_type": "van",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000011",
+        "trk_000012",
+        "trk_000013",
+        "trk_000014",
+        "trk_000015"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0004",
+      "true_plate": "H711KH34",
+      "make": "Kia",
+      "model": "Sportage",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "sedan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000016",
+        "trk_000017",
+        "trk_000018",
+        "trk_000019",
+        "trk_000020"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0005",
+      "true_plate": "H141BA34",
+      "make": "Volkswagen",
+      "model": "Tiguan",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "sedan",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000021",
+        "trk_000022",
+        "trk_000023",
+        "trk_000024",
+        "trk_000025"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0006",
+      "true_plate": "M851TM34",
+      "make": "Hyundai",
+      "model": "Creta",
+      "color": "red",
+      "vehicle_type": "van",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000026",
+        "trk_000027",
+        "trk_000028",
+        "trk_000029",
+        "trk_000030"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0007",
+      "true_plate": "O203KH134",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "blue",
+      "vehicle_type": "car",
+      "body_type": "minivan",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000031",
+        "trk_000032",
+        "trk_000033",
+        "trk_000034",
+        "trk_000035"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0008",
+      "true_plate": "K600HK34",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "color": "black",
+      "vehicle_type": "car",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000036",
+        "trk_000037",
+        "trk_000038",
+        "trk_000039",
+        "trk_000040"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0009",
+      "true_plate": "A107MB34",
+      "make": "Lada",
+      "model": "Granta",
+      "color": "white",
+      "vehicle_type": "car",
+      "body_type": "pickup",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000041",
+        "trk_000042",
+        "trk_000043",
+        "trk_000044",
+        "trk_000045"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0010",
+      "true_plate": "A293TX34",
+      "make": "BMW",
+      "model": "5",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000046",
+        "trk_000047",
+        "trk_000048",
+        "trk_000049",
+        "trk_000050"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0011",
+      "true_plate": "O601BB34",
+      "make": "Kia",
+      "model": "Sportage",
+      "color": "white",
+      "vehicle_type": "bus",
+      "body_type": "coupe",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000051",
+        "trk_000052",
+        "trk_000053",
+        "trk_000054",
+        "trk_000055"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0012",
+      "true_plate": "A558BB34",
+      "make": "Hyundai",
+      "model": "Creta",
+      "color": "white",
+      "vehicle_type": "bus",
+      "body_type": "crossover",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000056",
+        "trk_000057",
+        "trk_000058",
+        "trk_000059",
+        "trk_000060"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0013",
+      "true_plate": "E615TK134",
+      "make": "Volkswagen",
+      "model": "Tiguan",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "coupe",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000061",
+        "trk_000062",
+        "trk_000063",
+        "trk_000064",
+        "trk_000065"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0014",
+      "true_plate": "H986OP34",
+      "make": "Hyundai",
+      "model": "Creta",
+      "color": "black",
+      "vehicle_type": "motorcycle",
+      "body_type": "coupe",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000066",
+        "trk_000067",
+        "trk_000068",
+        "trk_000069",
+        "trk_000070"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0015",
+      "true_plate": "X589OX134",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "pickup",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000071",
+        "trk_000072",
+        "trk_000073",
+        "trk_000074",
+        "trk_000075"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0016",
+      "true_plate": "B645AH134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "white",
+      "vehicle_type": "bus",
+      "body_type": "crossover",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000076",
+        "trk_000077",
+        "trk_000078",
+        "trk_000079",
+        "trk_000080"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0017",
+      "true_plate": "M201OB134",
+      "make": "BMW",
+      "model": "3",
+      "color": "gray",
+      "vehicle_type": "truck",
+      "body_type": "hatchback",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000081",
+        "trk_000082",
+        "trk_000083",
+        "trk_000084",
+        "trk_000085"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0018",
+      "true_plate": "H139MC34",
+      "make": "BMW",
+      "model": "X5",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000086",
+        "trk_000087",
+        "trk_000088",
+        "trk_000089",
+        "trk_000090"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0019",
+      "true_plate": "P016BK134",
+      "make": "Hyundai",
+      "model": "Solaris",
+      "color": "silver",
+      "vehicle_type": "car",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000091",
+        "trk_000092",
+        "trk_000093",
+        "trk_000094",
+        "trk_000095"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0020",
+      "true_plate": "E208PO34",
+      "make": "BMW",
+      "model": "X5",
+      "color": "silver",
+      "vehicle_type": "bus",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000096",
+        "trk_000097",
+        "trk_000098",
+        "trk_000099",
+        "trk_000100"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0021",
+      "true_plate": "T162BH34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "black",
+      "vehicle_type": "truck",
+      "body_type": "coupe",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000101",
+        "trk_000102",
+        "trk_000103",
+        "trk_000104",
+        "trk_000105"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0022",
+      "true_plate": "P728EO34",
+      "make": "Lada",
+      "model": "Granta",
+      "color": "red",
+      "vehicle_type": "motorcycle",
+      "body_type": "crossover",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000106",
+        "trk_000107",
+        "trk_000108",
+        "trk_000109",
+        "trk_000110"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0023",
+      "true_plate": "X395XT34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "red",
+      "vehicle_type": "suv",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000111",
+        "trk_000112",
+        "trk_000113",
+        "trk_000114",
+        "trk_000115"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0024",
+      "true_plate": "M439AK134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "blue",
+      "vehicle_type": "suv",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000116",
+        "trk_000117",
+        "trk_000118",
+        "trk_000119",
+        "trk_000120"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0025",
+      "true_plate": "H895AH34",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "silver",
+      "vehicle_type": "truck",
+      "body_type": "hatchback",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000121",
+        "trk_000122",
+        "trk_000123",
+        "trk_000124",
+        "trk_000125"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0026",
+      "true_plate": "C409KH34",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "blue",
+      "vehicle_type": "suv",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000126",
+        "trk_000127",
+        "trk_000128",
+        "trk_000129",
+        "trk_000130"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0027",
+      "true_plate": "M280HK34",
+      "make": "BMW",
+      "model": "5",
+      "color": "black",
+      "vehicle_type": "bus",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000131",
+        "trk_000132",
+        "trk_000133",
+        "trk_000134",
+        "trk_000135"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0028",
+      "true_plate": "K288OO34",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "color": "black",
+      "vehicle_type": "bus",
+      "body_type": "coupe",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000136",
+        "trk_000137",
+        "trk_000138",
+        "trk_000139",
+        "trk_000140"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0029",
+      "true_plate": "C311KX34",
+      "make": "Toyota",
+      "model": "Corolla",
+      "color": "silver",
+      "vehicle_type": "car",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000141",
+        "trk_000142",
+        "trk_000143",
+        "trk_000144",
+        "trk_000145"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0030",
+      "true_plate": "P091OC34",
+      "make": "BMW",
+      "model": "X5",
+      "color": "black",
+      "vehicle_type": "van",
+      "body_type": "crossover",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000146",
+        "trk_000147",
+        "trk_000148",
+        "trk_000149",
+        "trk_000150"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0031",
+      "true_plate": "A505XA34",
+      "make": "Kia",
+      "model": "Sportage",
+      "color": "gray",
+      "vehicle_type": "bus",
+      "body_type": "wagon",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000151",
+        "trk_000152",
+        "trk_000153",
+        "trk_000154",
+        "trk_000155"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0032",
+      "true_plate": "B074CX34",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "color": "silver",
+      "vehicle_type": "van",
+      "body_type": "coupe",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000156",
+        "trk_000157",
+        "trk_000158",
+        "trk_000159",
+        "trk_000160"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0033",
+      "true_plate": "B013BO34",
+      "make": "BMW",
+      "model": "3",
+      "color": "silver",
+      "vehicle_type": "suv",
+      "body_type": "hatchback",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000161",
+        "trk_000162",
+        "trk_000163",
+        "trk_000164",
+        "trk_000165"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0034",
+      "true_plate": "B036EH34",
+      "make": "BMW",
+      "model": "5",
+      "color": "white",
+      "vehicle_type": "suv",
+      "body_type": "hatchback",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000166",
+        "trk_000167",
+        "trk_000168",
+        "trk_000169",
+        "trk_000170"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0035",
+      "true_plate": "P274OP134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "black",
+      "vehicle_type": "motorcycle",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000171",
+        "trk_000172",
+        "trk_000173",
+        "trk_000174",
+        "trk_000175"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0036",
+      "true_plate": "M677HB134",
+      "make": "Toyota",
+      "model": "Camry",
+      "color": "white",
+      "vehicle_type": "car",
+      "body_type": "coupe",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000176",
+        "trk_000177",
+        "trk_000178",
+        "trk_000179",
+        "trk_000180"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0037",
+      "true_plate": "A977OH34",
+      "make": "Lada",
+      "model": "Granta",
+      "color": "blue",
+      "vehicle_type": "truck",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000181",
+        "trk_000182",
+        "trk_000183",
+        "trk_000184",
+        "trk_000185"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0038",
+      "true_plate": "K501KK134",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "white",
+      "vehicle_type": "van",
+      "body_type": "pickup",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000186",
+        "trk_000187",
+        "trk_000188",
+        "trk_000189",
+        "trk_000190"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0039",
+      "true_plate": "P030XX34",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "color": "red",
+      "vehicle_type": "motorcycle",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000191",
+        "trk_000192",
+        "trk_000193",
+        "trk_000194",
+        "trk_000195"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0040",
+      "true_plate": "M050HP134",
+      "make": "Toyota",
+      "model": "Corolla",
+      "color": "blue",
+      "vehicle_type": "truck",
+      "body_type": "sedan",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000196",
+        "trk_000197",
+        "trk_000198",
+        "trk_000199",
+        "trk_000200"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0041",
+      "true_plate": "B252HC34",
+      "make": "BMW",
+      "model": "5",
+      "color": "red",
+      "vehicle_type": "van",
+      "body_type": "coupe",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000201",
+        "trk_000202",
+        "trk_000203",
+        "trk_000204",
+        "trk_000205"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0042",
+      "true_plate": "P943MC34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "gray",
+      "vehicle_type": "bus",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000206",
+        "trk_000207",
+        "trk_000208",
+        "trk_000209",
+        "trk_000210"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0043",
+      "true_plate": "O261KT34",
+      "make": "BMW",
+      "model": "3",
+      "color": "black",
+      "vehicle_type": "van",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000211",
+        "trk_000212",
+        "trk_000213",
+        "trk_000214",
+        "trk_000215"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0044",
+      "true_plate": "K219PB34",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "blue",
+      "vehicle_type": "car",
+      "body_type": "hatchback",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000216",
+        "trk_000217",
+        "trk_000218",
+        "trk_000219",
+        "trk_000220"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0045",
+      "true_plate": "K720XT34",
+      "make": "Toyota",
+      "model": "Corolla",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "coupe",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000221",
+        "trk_000222",
+        "trk_000223",
+        "trk_000224",
+        "trk_000225"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0046",
+      "true_plate": "H223BC134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "blue",
+      "vehicle_type": "car",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000226",
+        "trk_000227",
+        "trk_000228",
+        "trk_000229",
+        "trk_000230"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0047",
+      "true_plate": "O834HA134",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "silver",
+      "vehicle_type": "van",
+      "body_type": "pickup",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000231",
+        "trk_000232",
+        "trk_000233",
+        "trk_000234",
+        "trk_000235"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0048",
+      "true_plate": "E020HC134",
+      "make": "BMW",
+      "model": "3",
+      "color": "white",
+      "vehicle_type": "van",
+      "body_type": "pickup",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000236",
+        "trk_000237",
+        "trk_000238",
+        "trk_000239",
+        "trk_000240"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0049",
+      "true_plate": "K779EE134",
+      "make": "Lada",
+      "model": "Granta",
+      "color": "black",
+      "vehicle_type": "suv",
+      "body_type": "crossover",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000241",
+        "trk_000242",
+        "trk_000243",
+        "trk_000244",
+        "trk_000245"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0050",
+      "true_plate": "B723KE134",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "blue",
+      "vehicle_type": "motorcycle",
+      "body_type": "minivan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000246",
+        "trk_000247",
+        "trk_000248",
+        "trk_000249",
+        "trk_000250"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0051",
+      "true_plate": "A156MX134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "gray",
+      "vehicle_type": "truck",
+      "body_type": "minivan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000251",
+        "trk_000252",
+        "trk_000253",
+        "trk_000254",
+        "trk_000255"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0052",
+      "true_plate": "T289OH134",
+      "make": "Kia",
+      "model": "Sportage",
+      "color": "blue",
+      "vehicle_type": "bus",
+      "body_type": "pickup",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000256",
+        "trk_000257",
+        "trk_000258",
+        "trk_000259",
+        "trk_000260"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0053",
+      "true_plate": "K748KE34",
+      "make": "Hyundai",
+      "model": "Solaris",
+      "color": "blue",
+      "vehicle_type": "van",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000261",
+        "trk_000262",
+        "trk_000263",
+        "trk_000264",
+        "trk_000265"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0054",
+      "true_plate": "O104XH134",
+      "make": "BMW",
+      "model": "5",
+      "color": "silver",
+      "vehicle_type": "car",
+      "body_type": "crossover",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000266",
+        "trk_000267",
+        "trk_000268",
+        "trk_000269",
+        "trk_000270"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0055",
+      "true_plate": "K275AM34",
+      "make": "BMW",
+      "model": "3",
+      "color": "blue",
+      "vehicle_type": "bus",
+      "body_type": "pickup",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000271",
+        "trk_000272",
+        "trk_000273",
+        "trk_000274",
+        "trk_000275"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0056",
+      "true_plate": "H051BO34",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "red",
+      "vehicle_type": "truck",
+      "body_type": "pickup",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000276",
+        "trk_000277",
+        "trk_000278",
+        "trk_000279",
+        "trk_000280"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0057",
+      "true_plate": "X760XH34",
+      "make": "Hyundai",
+      "model": "Solaris",
+      "color": "red",
+      "vehicle_type": "car",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000281",
+        "trk_000282",
+        "trk_000283",
+        "trk_000284",
+        "trk_000285"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0058",
+      "true_plate": "K318EO134",
+      "make": "Toyota",
+      "model": "Corolla",
+      "color": "blue",
+      "vehicle_type": "truck",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000286",
+        "trk_000287",
+        "trk_000288",
+        "trk_000289",
+        "trk_000290"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0059",
+      "true_plate": "E534KC34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "white",
+      "vehicle_type": "van",
+      "body_type": "hatchback",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000291",
+        "trk_000292",
+        "trk_000293",
+        "trk_000294",
+        "trk_000295"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0060",
+      "true_plate": "B074OX34",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "color": "gray",
+      "vehicle_type": "car",
+      "body_type": "wagon",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000296",
+        "trk_000297",
+        "trk_000298",
+        "trk_000299",
+        "trk_000300"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0061",
+      "true_plate": "A972HX134",
+      "make": "Kia",
+      "model": "Sportage",
+      "color": "white",
+      "vehicle_type": "van",
+      "body_type": "wagon",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000301",
+        "trk_000302",
+        "trk_000303",
+        "trk_000304",
+        "trk_000305"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0062",
+      "true_plate": "K072XB34",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "blue",
+      "vehicle_type": "van",
+      "body_type": "hatchback",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000306",
+        "trk_000307",
+        "trk_000308",
+        "trk_000309",
+        "trk_000310"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0063",
+      "true_plate": "K031XE134",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "crossover",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000311",
+        "trk_000312",
+        "trk_000313",
+        "trk_000314",
+        "trk_000315"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0064",
+      "true_plate": "T237ET34",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "color": "black",
+      "vehicle_type": "van",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000316",
+        "trk_000317",
+        "trk_000318",
+        "trk_000319",
+        "trk_000320"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0065",
+      "true_plate": "P733KB134",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "black",
+      "vehicle_type": "suv",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000321",
+        "trk_000322",
+        "trk_000323",
+        "trk_000324",
+        "trk_000325"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0066",
+      "true_plate": "E999CM134",
+      "make": "BMW",
+      "model": "5",
+      "color": "black",
+      "vehicle_type": "motorcycle",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000326",
+        "trk_000327",
+        "trk_000328",
+        "trk_000329",
+        "trk_000330"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0067",
+      "true_plate": "B650HT134",
+      "make": "Hyundai",
+      "model": "Solaris",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "pickup",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000331",
+        "trk_000332",
+        "trk_000333",
+        "trk_000334",
+        "trk_000335"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0068",
+      "true_plate": "X191XH34",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "red",
+      "vehicle_type": "bus",
+      "body_type": "minivan",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000336",
+        "trk_000337",
+        "trk_000338",
+        "trk_000339",
+        "trk_000340"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0069",
+      "true_plate": "A181PK34",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "coupe",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000341",
+        "trk_000342",
+        "trk_000343",
+        "trk_000344",
+        "trk_000345"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0070",
+      "true_plate": "C277AB34",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "color": "white",
+      "vehicle_type": "bus",
+      "body_type": "minivan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000346",
+        "trk_000347",
+        "trk_000348",
+        "trk_000349",
+        "trk_000350"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0071",
+      "true_plate": "C004OB134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000351",
+        "trk_000352",
+        "trk_000353",
+        "trk_000354",
+        "trk_000355"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0072",
+      "true_plate": "M507CK134",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "silver",
+      "vehicle_type": "suv",
+      "body_type": "crossover",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000356",
+        "trk_000357",
+        "trk_000358",
+        "trk_000359",
+        "trk_000360"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0073",
+      "true_plate": "C201MM134",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "black",
+      "vehicle_type": "suv",
+      "body_type": "coupe",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000361",
+        "trk_000362",
+        "trk_000363",
+        "trk_000364",
+        "trk_000365"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0074",
+      "true_plate": "O814KE34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000366",
+        "trk_000367",
+        "trk_000368",
+        "trk_000369",
+        "trk_000370"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0075",
+      "true_plate": "K305OA34",
+      "make": "Hyundai",
+      "model": "Creta",
+      "color": "black",
+      "vehicle_type": "motorcycle",
+      "body_type": "pickup",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000371",
+        "trk_000372",
+        "trk_000373",
+        "trk_000374",
+        "trk_000375"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0076",
+      "true_plate": "M688OB34",
+      "make": "Lada",
+      "model": "Vesta",
+      "color": "gray",
+      "vehicle_type": "car",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000376",
+        "trk_000377",
+        "trk_000378",
+        "trk_000379",
+        "trk_000380"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0077",
+      "true_plate": "H028TP134",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "hatchback",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000381",
+        "trk_000382",
+        "trk_000383",
+        "trk_000384",
+        "trk_000385"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0078",
+      "true_plate": "T534TB34",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "blue",
+      "vehicle_type": "van",
+      "body_type": "sedan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000386",
+        "trk_000387",
+        "trk_000388",
+        "trk_000389",
+        "trk_000390"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0079",
+      "true_plate": "T920XX34",
+      "make": "BMW",
+      "model": "3",
+      "color": "black",
+      "vehicle_type": "bus",
+      "body_type": "minivan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000391",
+        "trk_000392",
+        "trk_000393",
+        "trk_000394",
+        "trk_000395"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0080",
+      "true_plate": "P385HP34",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "red",
+      "vehicle_type": "bus",
+      "body_type": "sedan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000396",
+        "trk_000397",
+        "trk_000398",
+        "trk_000399",
+        "trk_000400"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0081",
+      "true_plate": "P414HH134",
+      "make": "BMW",
+      "model": "X5",
+      "color": "blue",
+      "vehicle_type": "motorcycle",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000401",
+        "trk_000402",
+        "trk_000403",
+        "trk_000404",
+        "trk_000405"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0082",
+      "true_plate": "A547XC134",
+      "make": "Toyota",
+      "model": "Corolla",
+      "color": "white",
+      "vehicle_type": "motorcycle",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000406",
+        "trk_000407",
+        "trk_000408",
+        "trk_000409",
+        "trk_000410"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0083",
+      "true_plate": "A434XK134",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "silver",
+      "vehicle_type": "car",
+      "body_type": "hatchback",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000411",
+        "trk_000412",
+        "trk_000413",
+        "trk_000414",
+        "trk_000415"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0084",
+      "true_plate": "X929PO34",
+      "make": "Lada",
+      "model": "Vesta",
+      "color": "blue",
+      "vehicle_type": "truck",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000416",
+        "trk_000417",
+        "trk_000418",
+        "trk_000419",
+        "trk_000420"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0085",
+      "true_plate": "X464AP134",
+      "make": "BMW",
+      "model": "5",
+      "color": "black",
+      "vehicle_type": "van",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000421",
+        "trk_000422",
+        "trk_000423",
+        "trk_000424",
+        "trk_000425"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0086",
+      "true_plate": "X346MO134",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "silver",
+      "vehicle_type": "suv",
+      "body_type": "hatchback",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000426",
+        "trk_000427",
+        "trk_000428",
+        "trk_000429",
+        "trk_000430"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0087",
+      "true_plate": "C899PM134",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "pickup",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000431",
+        "trk_000432",
+        "trk_000433",
+        "trk_000434",
+        "trk_000435"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0088",
+      "true_plate": "B216HO134",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "white",
+      "vehicle_type": "car",
+      "body_type": "pickup",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000436",
+        "trk_000437",
+        "trk_000438",
+        "trk_000439",
+        "trk_000440"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0089",
+      "true_plate": "X323OT34",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "silver",
+      "vehicle_type": "suv",
+      "body_type": "crossover",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000441",
+        "trk_000442",
+        "trk_000443",
+        "trk_000444",
+        "trk_000445"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0090",
+      "true_plate": "O981KP34",
+      "make": "Toyota",
+      "model": "RAV4",
+      "color": "black",
+      "vehicle_type": "car",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000446",
+        "trk_000447",
+        "trk_000448",
+        "trk_000449",
+        "trk_000450"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0091",
+      "true_plate": "H893CH34",
+      "make": "Lada",
+      "model": "Vesta",
+      "color": "white",
+      "vehicle_type": "bus",
+      "body_type": "coupe",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000451",
+        "trk_000452",
+        "trk_000453",
+        "trk_000454",
+        "trk_000455"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0092",
+      "true_plate": "T034CB34",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "gray",
+      "vehicle_type": "bus",
+      "body_type": "sedan",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000456",
+        "trk_000457",
+        "trk_000458",
+        "trk_000459",
+        "trk_000460"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0093",
+      "true_plate": "T995AK34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "silver",
+      "vehicle_type": "suv",
+      "body_type": "minivan",
+      "size_class": "medium",
+      "track_ids": [
+        "trk_000461",
+        "trk_000462",
+        "trk_000463",
+        "trk_000464",
+        "trk_000465"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0094",
+      "true_plate": "M189MC34",
+      "make": "Volkswagen",
+      "model": "Passat",
+      "color": "black",
+      "vehicle_type": "suv",
+      "body_type": "minivan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000466",
+        "trk_000467",
+        "trk_000468",
+        "trk_000469",
+        "trk_000470"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0095",
+      "true_plate": "M957KB134",
+      "make": "Kia",
+      "model": "Ceed",
+      "color": "white",
+      "vehicle_type": "car",
+      "body_type": "sedan",
+      "size_class": "small",
+      "track_ids": [
+        "trk_000471",
+        "trk_000472",
+        "trk_000473",
+        "trk_000474",
+        "trk_000475"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0096",
+      "true_plate": "C601XC34",
+      "make": "Hyundai",
+      "model": "Creta",
+      "color": "black",
+      "vehicle_type": "suv",
+      "body_type": "minivan",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000476",
+        "trk_000477",
+        "trk_000478",
+        "trk_000479",
+        "trk_000480"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0097",
+      "true_plate": "X142EP134",
+      "make": "Toyota",
+      "model": "Corolla",
+      "color": "white",
+      "vehicle_type": "car",
+      "body_type": "coupe",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000481",
+        "trk_000482",
+        "trk_000483",
+        "trk_000484",
+        "trk_000485"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0098",
+      "true_plate": "C911CA34",
+      "make": "Lada",
+      "model": "Vesta",
+      "color": "red",
+      "vehicle_type": "bus",
+      "body_type": "coupe",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000486",
+        "trk_000487",
+        "trk_000488",
+        "trk_000489",
+        "trk_000490"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0099",
+      "true_plate": "A431EM34",
+      "make": "Lada",
+      "model": "Niva",
+      "color": "blue",
+      "vehicle_type": "truck",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000491",
+        "trk_000492",
+        "trk_000493",
+        "trk_000494",
+        "trk_000495"
+      ]
+    },
+    {
+      "vehicle_id": "veh_0100",
+      "true_plate": "H603EO34",
+      "make": "Kia",
+      "model": "Rio",
+      "color": "gray",
+      "vehicle_type": "van",
+      "body_type": "wagon",
+      "size_class": "large",
+      "track_ids": [
+        "trk_000496",
+        "trk_000497",
+        "trk_000498",
+        "trk_000499",
+        "trk_000500"
+      ]
+    }
+  ]
+}
