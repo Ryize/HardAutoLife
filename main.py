@@ -14,6 +14,7 @@ from utils import compute_track_features
 from reid import reidentify
 from config import ReIDConfig
 from metrics import evaluate_entities, extract_reference_groups, update_statistics_file
+from postgres_storage import PostgresAuditStorage
 from utils import normalize_time
 
 
@@ -253,6 +254,35 @@ def main():
         print(f" Проверка цепочки: {validation_message}")
         if not is_valid:
             raise RuntimeError("После записи цепочка блоков не прошла проверку")
+
+        postgres_storage = PostgresAuditStorage.from_env()
+        if postgres_storage.enabled:
+            try:
+                db_row_id = postgres_storage.save_audit_record(
+                    input_payload=json_data,
+                    track_features=track_features,
+                    reid_result={
+                        "entities": entities_out,
+                        "links": links_out,
+                    },
+                    metadata={
+                        "batch_id": batch.batch_id,
+                        "num_tracks": len(batch.tracks),
+                        "source_file": str(json_path),
+                    },
+                    blockchain={
+                        "block_index": block.index,
+                        "block_hash": block.block_hash,
+                        "previous_hash": block.previous_hash,
+                        "merkle_root": block.merkle_root,
+                        "difficulty": block.difficulty,
+                        "chain_valid": is_valid,
+                        "validation_message": validation_message,
+                    },
+                )
+                print(f" PostgreSQL-запись сохранена: id={db_row_id}")
+            except Exception as db_exc:
+                print(f" Предупреждение: не удалось сохранить в PostgreSQL: {db_exc}")
 
     except Exception as e:
         print(f"Ошибка: {e}")

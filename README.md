@@ -36,6 +36,22 @@ HardAutoLife/
 python main.py examples/sample_batch_extended.json
 ```
 
+### Дополнительное сохранение в PostgreSQL
+
+Если нужна запись результатов в БД (параллельно с blockchain-журналом), задайте переменные окружения:
+
+```bash
+export POSTGRES_DSN="postgresql://user:password@localhost:5432/hardautolife"
+```
+
+И установите драйвер PostgreSQL:
+
+```bash
+pip install "psycopg[binary]"
+```
+
+После этого `main.py` и API `POST /reid` будут дополнительно сохранять audit-запись в PostgreSQL.
+
 ### Запуск тестов
 
 ```bash

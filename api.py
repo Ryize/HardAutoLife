@@ -4,6 +4,7 @@ from fastapi import FastAPI, HTTPException
 
 from blockchain import LocalBlockchain
 from config import ReIDConfig
+from postgres_storage import PostgresAuditStorage
 from reid import reidentify
 from schema import load_batch
 from utils import compute_track_features
@@ -89,6 +90,41 @@ async def reid_endpoint(batch: Dict[str, Any]) -> Dict[str, Any]:
         },
     )
     chain_valid, chain_message = blockchain.verify_chain()
+    db_result: Dict[str, Any] = {
+        "enabled": False,
+        "saved": False,
+    }
+
+    postgres_storage = PostgresAuditStorage.from_env()
+    if postgres_storage.enabled:
+        db_result["enabled"] = True
+        try:
+            db_row_id = postgres_storage.save_audit_record(
+                input_payload=batch,
+                track_features=features,
+                reid_result={
+                    "entities": entities_out,
+                    "links": links_out,
+                },
+                metadata={
+                    "batch_id": batch_obj.batch_id,
+                    "num_tracks": len(batch_obj.tracks),
+                    "source": "api:/reid",
+                },
+                blockchain={
+                    "block_index": block.index,
+                    "block_hash": block.block_hash,
+                    "previous_hash": block.previous_hash,
+                    "merkle_root": block.merkle_root,
+                    "difficulty": block.difficulty,
+                    "chain_valid": chain_valid,
+                    "validation_message": chain_message,
+                },
+            )
+            db_result["saved"] = True
+            db_result["row_id"] = db_row_id
+        except Exception as db_exc:
+            db_result["error"] = str(db_exc)
 
     return {
         "batch_id": batch_obj.batch_id,
@@ -105,4 +141,5 @@ async def reid_endpoint(batch: Dict[str, Any]) -> Dict[str, Any]:
             "chain_valid": chain_valid,
             "validation_message": chain_message,
         },
+        "postgres": db_result,
     }
