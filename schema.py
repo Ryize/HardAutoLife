@@ -136,6 +136,7 @@ class Batch:
     tracks: List[Track]
     batch_id: Optional[str] = None
     timestamp: Optional[str] = None
+    violations: Optional[Dict[str, Any]] = None
 
     def __post_init__(self):
         """Валидация пакета после создания."""
@@ -225,7 +226,7 @@ def load_batch(data: Union[str, Dict[str, Any]]) -> Batch:
         tracks=tracks,
         batch_id=data.get('batch_id'),
         timestamp=data.get('timestamp'),
+        violations=data.get('violations'),
     )
     
     return batch
-

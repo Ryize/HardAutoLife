@@ -14,8 +14,10 @@ from utils import compute_track_features
 from reid import reidentify
 from config import ReIDConfig
 from metrics import evaluate_entities, extract_reference_groups, update_statistics_file
+from json_cache_storage import JsonAuditCache
 from postgres_storage import PostgresAuditStorage
 from utils import normalize_time
+from violations import detect_speed_violations
 
 
 def print_batch_info(batch):
@@ -118,6 +120,21 @@ def print_reid_results(entities, links):
     print()
 
 
+def print_violations(violations):
+    """Вывод информации о нарушениях скорости."""
+    print("=" * 80)
+    print("НАРУШЕНИЯ")
+    print("=" * 80)
+    print(f"Ограничение скорости: {violations.get('speed_limit_kph')} км/ч")
+    print(f"Найдено нарушений: {violations.get('count', 0)}")
+    for item in violations.get("speeding", []):
+        print(
+            f"  track_id={item['track_id']}, max_speed={item['max_speed_kph']} км/ч, "
+            f"source={item['source_id']}"
+        )
+    print()
+
+
 def build_track_features(batch):
     """Вычисление признаков по всем трекам пакета."""
     return {
@@ -153,6 +170,27 @@ def serialize_links(links):
     ]
 
 
+def print_cached_result(cached_record):
+    """Вывод ранее сохранённого результата без повторного расчёта."""
+    print("=" * 80)
+    print("НАЙДЕН ГОТОВЫЙ РЕЗУЛЬТАТ В КЭШЕ (CACHE HIT)")
+    print("=" * 80)
+    metadata = cached_record.get("metadata") or {}
+    reid_result = cached_record.get("reid_result") or {}
+    print(f"Batch ID: {metadata.get('batch_id') or cached_record.get('batch_id')}")
+    print(f"Количество треков: {metadata.get('num_tracks') or cached_record.get('num_tracks')}")
+    if cached_record.get("id") is not None:
+        print(f"DB row id: {cached_record.get('id')}")
+    print(f"Input hash: {cached_record.get('input_hash')}")
+    print(f"Найдено сущностей: {len(reid_result.get('entities', []))}")
+    print(f"Найдено связей: {len(reid_result.get('links', []))}")
+    violations = reid_result.get("violations")
+    if violations:
+        print(f"Найдено нарушений: {violations.get('count', 0)}")
+    print()
+    print(json.dumps(reid_result, ensure_ascii=False, indent=2))
+
+
 def main():
     """Основная функция."""
     request_started_at = time.perf_counter()
@@ -174,11 +212,34 @@ def main():
         with open(json_path, 'r', encoding='utf-8') as f:
             json_data = json.load(f)
 
+        json_cache = JsonAuditCache.from_env()
+        try:
+            cached_json = json_cache.find_cached_record(input_payload=json_data)
+            if cached_json:
+                print_cached_result(cached_json)
+                return
+        except Exception as cache_exc:
+            print(f" Предупреждение: не удалось проверить JSON-кэш: {cache_exc}")
+
+        postgres_storage = PostgresAuditStorage.from_env()
+        if postgres_storage.enabled:
+            try:
+                cached = postgres_storage.find_cached_record(input_payload=json_data)
+                if cached:
+                    print_cached_result(cached)
+                    return
+            except Exception as db_exc:
+                print(f" Предупреждение: не удалось проверить кэш PostgreSQL: {db_exc}")
+
         # Валидация и загрузка пакета
         print("Валидация данных...")
         batch = load_batch(json_data)
         print(" Данные успешно загружены и валидированы")
         print()
+
+        violations = detect_speed_violations(batch)
+        batch.violations = violations
+        print_violations(violations)
 
         # Вывод информации о пакете
         print_batch_info(batch)
@@ -242,6 +303,7 @@ def main():
             reid_result={
                 "entities": entities_out,
                 "links": links_out,
+                "violations": violations,
             },
             metadata={
                 "batch_id": batch.batch_id,
@@ -255,7 +317,34 @@ def main():
         if not is_valid:
             raise RuntimeError("После записи цепочка блоков не прошла проверку")
 
-        postgres_storage = PostgresAuditStorage.from_env()
+        try:
+            cache_input_hash = json_cache.save_record(
+                input_payload=json_data,
+                track_features=track_features,
+                reid_result={
+                    "entities": entities_out,
+                    "links": links_out,
+                    "violations": violations,
+                },
+                metadata={
+                    "batch_id": batch.batch_id,
+                    "num_tracks": len(batch.tracks),
+                    "source_file": str(json_path),
+                },
+                blockchain={
+                    "block_index": block.index,
+                    "block_hash": block.block_hash,
+                    "previous_hash": block.previous_hash,
+                    "merkle_root": block.merkle_root,
+                    "difficulty": block.difficulty,
+                    "chain_valid": is_valid,
+                    "validation_message": validation_message,
+                },
+            )
+            print(f" JSON-кэш обновлён: hash={cache_input_hash}")
+        except Exception as cache_exc:
+            print(f" Предупреждение: не удалось сохранить JSON-кэш: {cache_exc}")
+
         if postgres_storage.enabled:
             try:
                 db_row_id = postgres_storage.save_audit_record(
@@ -264,6 +353,7 @@ def main():
                     reid_result={
                         "entities": entities_out,
                         "links": links_out,
+                        "violations": violations,
                     },
                     metadata={
                         "batch_id": batch.batch_id,
